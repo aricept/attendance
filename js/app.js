@@ -29,6 +29,18 @@
 
 /* STUDENT APPLICATION */
 $(function() {
+
+    var view = {
+        newMissed: function(student) {
+            master.addMissed(student);
+            var updatedMissed = master.getMissed(student);
+            this.render();
+        },
+        render: function() {
+            
+        }
+    }
+
     var attendance = JSON.parse(localStorage.attendance),
         $allMissed = $('tbody .missed-col'),
         $allCheckboxes = $('tbody input');
